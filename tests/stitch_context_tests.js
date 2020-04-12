@@ -1,13 +1,13 @@
 'use strict';
-const chai = require ('chai');
+const chai = require('chai');
 const sinon = require('sinon');
 
 const StitchContext = require('../stitch-context');
 
-describe ('Stitch Context', function() {
+describe('Stitch Context', async function () {
     const sandbox = sinon.createSandbox();
 
-    it ('check all default contexts', function(){
+    it('check all default contexts', async function () {
         const context = new StitchContext();
         chai.expect(context).to.be.an('object');
         chai.expect(context.constructor.name).to.equal('StitchContext');
@@ -17,19 +17,19 @@ describe ('Stitch Context', function() {
         chai.expect(context).to.have.property('request');
         chai.expect(context).to.have.property('functions');
         chai.expect(context).to.have.property('http');
-        context.stop();
+        await context.stop();
     });
 
-    beforeEach(function() {
+    beforeEach(function () {
         this.context = new StitchContext();
         sandbox.spy(this.context, "stop");
     });
 
-    afterEach(function() {
+    afterEach(function () {
         sandbox.restore();
     });
 
-    it ('stop all open contexts', async function (){
+    it('stop all open contexts', async function () {
         this.context.stop();
         chai.expect(this.context.stop.calledOnce).to.equal(true);
     })

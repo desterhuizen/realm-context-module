@@ -1,21 +1,20 @@
 'use strict';
-
 const ServiceContext = require('../services');
 const chai = require('chai');
 
 let serviceContext = null;
 
-before( async function (){
-    serviceContext = new ServiceContext();
-    await serviceContext.addDatabaseContext('mongodb-atlas');
-});
+describe('Services Context', function () {
+    before(async function () {
+        serviceContext = new ServiceContext();
+        await serviceContext.addDatabaseContext('mongodb-atlas');
+    });
 
-after ( async function (){
-    await serviceContext.stop();
-});
+    after(async function () {
+        await serviceContext.stop();
+    });
 
-describe ('Services Context', function () {
-    it('add mongodb database service', async function (){
+    it('add mongodb database service', async function () {
         let mongodb = await serviceContext.get('mongodb-atlas');
         let testCollection = mongodb.db('test').collection('test');
         await testCollection.insertOne({_id: 1234});

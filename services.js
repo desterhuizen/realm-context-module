@@ -2,16 +2,16 @@
 const DatabaseContext = require('./database');
 
 module.exports = class Services {
-    constructor () {
+    constructor() {
         this.services = {};
     }
 
-    async addDatabaseContext (serviceName) {
+    async addDatabaseContext(serviceName) {
         this.services[serviceName] = new DatabaseContext();
         await this.services[serviceName].setup();
     }
 
-    get (serviceName) {
+    get(serviceName) {
         return this.services[serviceName].get();
     };
 
