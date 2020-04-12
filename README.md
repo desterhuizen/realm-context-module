@@ -39,7 +39,7 @@ mkdir testdb
 
 Create a new test for the function we created
 
-```
+```javascript
 const fs = require('fs');
 const path = require('path');
 const chai = require('chai');
@@ -110,7 +110,7 @@ describe('processBaseEvent', function () {
 ```
 
 Example Function
-```
+```javascript
 exports = function(eventDocument){
 
   if (!eventDocument) {
