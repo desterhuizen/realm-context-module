@@ -4,29 +4,28 @@ const MongoClient = require('mongodb').MongoClient;
 
 let mongoServer;
 
-
-async function initiateDatabase () {
+async function initiateDatabase() {
     mongoServer = new MongoMemoryServer();
     return await mongoServer.getUri();
 
 }
 
 module.exports = class Database {
-    constructor () {
+    constructor() {
         this.databaseClient = null;
         this.databaseUri = null;
     }
 
-    async setup () {
+    async setup() {
         this.databaseUri = await initiateDatabase();
-        this.databaseClient = await new MongoClient.connect(this.databaseUri,{ useUnifiedTopology: true });
+        this.databaseClient = await new MongoClient.connect(this.databaseUri, {useUnifiedTopology: true});
     }
 
-     get () {
+    get() {
         return this.databaseClient;
-     }
+    }
 
-    async stop () {
+    async stop() {
         await this.databaseClient.close();
         await mongoServer.stop();
     }
