@@ -30,6 +30,7 @@ Add Mocha, Chai and sinonjs
 Create a tests directory
 ```
 mkdir tests
+mkdir testdb
 ```
 
 Create a new test for the function we created
