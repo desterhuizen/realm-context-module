@@ -22,7 +22,7 @@ npm init
 Import the  Stitch-Context-Module from github.
 
 ```
-npm install --save-dev git@github.com:desterhuizen/stitch-context-module.git
+npm install --save-dev https://github.com/desterhuizen/stitch-context-module.git
 ```
 
 Add Mocha, Chai and sinonjs
