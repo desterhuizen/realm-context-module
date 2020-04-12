@@ -2,7 +2,7 @@
 A simulated Stitch context to be used a part of automated testing stitch functions. 
 
 ## Tests
-![Node.js CI](https://github.com/desterhuizen/stitch-context-module/workflows/Node.js%20CI/badge.svg?branch=master)
+![Automated Tests](https://github.com/desterhuizen/stitch-context-module/workflows/Automated%20Tests/badge.svg?branch=master)
 
 # Example Project
 
