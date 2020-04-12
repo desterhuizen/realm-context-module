@@ -2,7 +2,8 @@
 A simulated Stitch context to be used a part of automated testing stitch functions. 
 
 ## Tests
-![Automated Tests](https://github.com/desterhuizen/stitch-context-module/workflows/Automated%20Tests/badge.svg?branch=master)
+![Master](https://github.com/desterhuizen/stitch-context-module/workflows/Automated%20Tests/badge.svg?branch=master)
+![Development](https://github.com/desterhuizen/stitch-context-module/workflows/Automated%20Tests/badge.svg?branch=development)
 
 # Example Project
 
