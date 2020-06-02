@@ -14,7 +14,7 @@ Export the Stitch project using the stitch-cli.
 stitch-cli login --api-key=<API_KEY> --private-api-key=<API_PRIVATE_KEY>
 stitch-cli export --app-id=<STITCH-APPLICATION-ID>
 ```
-Initiate the poroject as an NPM project
+Initiate the project as an NPM project
 ```
 npm init 
 ```
