@@ -1,36 +1,43 @@
 'use strict';
 const chai = require('chai');
-const sinon = require('sinon');
 
 const StitchContext = require('../stitch-context');
 
 describe('Stitch Context', async function () {
-    const sandbox = sinon.createSandbox();
 
     it('check all default contexts', async function () {
-        const context = new StitchContext();
-        chai.expect(context).to.be.an('object');
-        chai.expect(context.constructor.name).to.equal('StitchContext');
-        chai.expect(context).to.have.property('services');
-        chai.expect(context).to.have.property('values');
-        chai.expect(context).to.have.property('users');
-        chai.expect(context).to.have.property('request');
-        chai.expect(context).to.have.property('functions');
-        chai.expect(context).to.have.property('http');
-        await context.stop();
+        chai.expect(this.context).to.be.an('object');
+        chai.expect(this.context.constructor.name).to.equal('StitchContext');
+        chai.expect(this.context).to.have.property('services');
+        chai.expect(this.context).to.have.property('values');
+        chai.expect(this.context).to.have.property('users');
+        chai.expect(this.context).to.have.property('request');
+        chai.expect(this.context).to.have.property('functions');
+        chai.expect(this.context).to.have.property('http');
     });
 
-    beforeEach(function () {
-        this.context = new StitchContext();
-        sandbox.spy(this.context, "stop");
+    it('check all services are loaded', function () {
+        chai.expect(Object.keys(this.context.services.services).length).to.equal(1);
     });
 
-    afterEach(function () {
-        sandbox.restore();
+    it('check all functions are loaded', function () {
+        chai.expect(Object.keys(this.context.functions.functions).length).to.equal(1);
     });
 
-    it('stop all open contexts', async function () {
-        this.context.stop();
-        chai.expect(this.context.stop.calledOnce).to.equal(true);
-    })
+    it('check all values are loaded', function () {
+        chai.expect(Object.keys(this.context.values).length).to.equal(1);
+    });
+
+    it('check all auth_providers are loaded', function () {
+        chai.expect(Object.keys(this.context.auth_providers).length).to.equal(1);
+    });
+
+    beforeEach(async function () {
+        this.context = new StitchContext("./tests/TestProject/");
+        await this.context.init();
+    });
+
+    afterEach(async function () {
+        await this.context.stop();
+    });
 });

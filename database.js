@@ -26,7 +26,9 @@ module.exports = class Database {
     }
 
     async stop() {
-        await this.databaseClient.close();
+        if (this.databaseClient) {
+            await this.databaseClient.close();
+        }
         await mongoServer.stop();
     }
 };

@@ -13,7 +13,7 @@ module.exports = class Services {
 
     get(serviceName) {
         return this.services[serviceName].get();
-    };
+    }
 
     async stop() {
         for (const service of Object.keys(this.services)) {
