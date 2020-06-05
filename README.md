@@ -43,6 +43,7 @@ Create a new test for the function we created
 const StitchContext = require('stitch-context-module');
 const chai = require('chai');
 
+// The path to your stitch project export root.
 global.context = new StitchContext('./stitch/');
 
 before (async function () {
