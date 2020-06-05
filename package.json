@@ -1,7 +1,7 @@
 {
   "name": "stitch-context-module",
-  "version": "0.0.1",
-  "description": "",
+  "version": "1.0.0",
+  "description": "A local stitch context that can be used to test MongoDB Stitch Functions locally",
   "main": "stitch-context.js",
   "scripts": {
     "test": "mocha tests/*"
