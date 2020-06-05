@@ -1,7 +1,7 @@
 {
   "name": "stitch-context-module",
-  "version": "0.0.1",
-  "description": "",
+  "version": "1.0.0",
+  "description": "A local stitch context that can be used to test MongoDB Stitch Functions locally",
   "main": "stitch-context.js",
   "scripts": {
     "test": "mocha tests/*"
@@ -12,13 +12,12 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^7.1.1",
-    "mongodb-memory-server": "^6.5.1",
-    "mongodb-memory-server-core": "^6.5.1",
-    "mongodb-prebuilt": "^6.5.0",
     "nyc": "^15.0.1",
     "sinon": "^9.0.1"
   },
   "dependencies": {
-    "mongodb": "^3.5.5"
+    "mongodb": "^3.5.5",
+    "mongodb-memory-server": "^6.5.1",
+    "mongodb-memory-server-core": "^6.5.1"
   }
 }
