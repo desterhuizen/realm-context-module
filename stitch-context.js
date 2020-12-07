@@ -29,10 +29,25 @@ module.exports = class StitchContext {
     }
 
     async init() {
-        let functionPaths = fs.readdirSync(path.resolve(this.pathToStitchProject + "/functions"));
-        let servicesPaths = fs.readdirSync(path.resolve(this.pathToStitchProject + "/services"));
-        let valuesPaths = fs.readdirSync(path.resolve(this.pathToStitchProject + "/values"));
-        let authProvidersPaths = fs.readdirSync(path.resolve(this.pathToStitchProject + "/auth_providers"));
+        let functionPaths = "";
+        if (fs.existsSync(path.resolve(this.pathToStitchProject + "/functions"))) {
+            functionPaths = fs.readdirSync(path.resolve(this.pathToStitchProject + "/functions"));
+        }
+
+        let servicesPaths = "";
+        if (fs.existsSync(path.resolve(this.pathToStitchProject + "/services"))) {
+            servicesPaths = fs.readdirSync(path.resolve(this.pathToStitchProject + "/services"));
+        }
+
+        let valuesPaths = "";
+        if (fs.existsSync(path.resolve(this.pathToStitchProject + "/values"))) {
+            valuesPaths = fs.readdirSync(path.resolve(this.pathToStitchProject + "/values"));
+        }
+
+        let authProvidersPaths = "";
+        if (fs.existsSync(path.resolve(this.pathToStitchProject + "/auth_providers"))) {
+            authProvidersPaths = fs.readdirSync(path.resolve(this.pathToStitchProject + "/auth_providers"));
+        }
 
         if (functionPaths.length > 0) {
             this.loadFunctions(functionPaths, this.pathToStitchProject);
