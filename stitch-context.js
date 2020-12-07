@@ -1,11 +1,13 @@
 'use strict';
+
 /**
  * Internal modules
  */
+const fs = require('fs');
+const path = require('path');
+
 const Services = require('./services.js');
 const Functions = require('./functions.js');
-const path = require('path');
-const fs = require('fs');
 
 /***
  * Class used for contexts as stitch contexts. This can be used for testing
