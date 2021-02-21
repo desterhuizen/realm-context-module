@@ -1,6 +1,5 @@
 'use strict';
 const FunctionsContext = require('../functions');
-const sinon = require('sinon');
 const chai = require('chai');
 
 describe('Functions Context', function () {

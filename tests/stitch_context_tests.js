@@ -1,13 +1,13 @@
 'use strict';
 const chai = require('chai');
 
-const StitchContext = require('../stitch-context');
+const StitchContext = require('../realm-context');
 
-describe('Stitch Context', async function () {
+describe('Realm Context', async function () {
 
     it('check all default contexts', async function () {
         chai.expect(this.context).to.be.an('object');
-        chai.expect(this.context.constructor.name).to.equal('StitchContext');
+        chai.expect(this.context.constructor.name).to.equal('RealmContext');
         chai.expect(this.context).to.have.property('services');
         chai.expect(this.context).to.have.property('values');
         chai.expect(this.context).to.have.property('users');
