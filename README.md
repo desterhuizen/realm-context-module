@@ -1,28 +1,28 @@
-# stitch-context-module
-A simulated Stitch context to be used a part of automated testing stitch functions. 
+# realm-context-module
+A simulated Realm context to be used a part of automated testing stitch functions. 
 
 ## Tests
 ![Master](https://github.com/desterhuizen/stitch-context-module/workflows/Automated%20Tests/badge.svg?branch=master)
 
 # Example Project
 
-## Export the Stitch project
+## Export the Realm project
 
-Export the Stitch project using the stitch-cli.
+Export the Realm project using the realm-cli.
 
 ```
-stitch-cli login --api-key=<API_KEY> --private-api-key=<API_PRIVATE_KEY>
-stitch-cli export --app-id=<STITCH-APPLICATION-ID>
+realm-cli login --api-key=<API_KEY> --private-api-key=<API_PRIVATE_KEY>
+realm-cli export --app-id=<STITCH-APPLICATION-ID>
 ```
 Initiate the project as an NPM project
 ```
 npm init 
 ```
 
-Import the  Stitch-Context-Module from github.
+Import the  Realm-Context-Module from github.
 
 ```
-npm install --save-dev https://github.com/desterhuizen/stitch-context-module.git
+npm install --save-dev https://github.com/desterhuizen/realm-context-module.git
 ```
 
 Add Mocha, Chai and sinonjs
@@ -40,11 +40,11 @@ mkdir testdb
 Create a new test for the function we created
 
 ```javascript
-const StitchContext = require('stitch-context-module');
+const RealmContext = require('realm-context-module');
 const chai = require('chai');
 
-// The path to your stitch project export root.
-global.context = new StitchContext('./stitch/');
+// The path to your realm project export root.
+global.context = new RealmContext('./realm/');
 
 before (async function () {
     this.timeout(2000000);
